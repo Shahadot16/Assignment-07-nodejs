@@ -1,0 +1,17 @@
+{
+  "name": "ai-prompt-web-app",
+  "version": "1.0.0",
+  "description": "AI Prompt Web Application using Node.js http module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "http",
+    "ai",
+    "groq"
+  ],
+  "author": "",
+  "license": "MIT"
+}
