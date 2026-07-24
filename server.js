@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-
+require('dotenv').config()
 const PORT = 3000;
 const htmlPath = path.join(__dirname, 'random.html');
 const GROQ_API_KEY = process.env.GROQ_API_KEY;

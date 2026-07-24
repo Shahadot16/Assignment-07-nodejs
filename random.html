@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +12,7 @@
       background: #f4f7fb;
       color: #1f2937;
     }
+
     .container {
       max-width: 720px;
       margin: 0 auto;
@@ -19,6 +21,7 @@
       border-radius: 12px;
       box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
+
     textarea {
       width: 100%;
       min-height: 140px;
@@ -29,6 +32,7 @@
       box-sizing: border-box;
       margin-bottom: 12px;
     }
+
     button {
       background: #2563eb;
       color: white;
@@ -38,6 +42,7 @@
       cursor: pointer;
       font-size: 16px;
     }
+
     #resultBox {
       margin-top: 18px;
       padding: 16px;
@@ -47,15 +52,15 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>AI Prompt Web Application</h1>
     <form id="promptForm">
+      <div id="resultBox">__RESULT__</div>
       <textarea id="prompt" name="prompt" placeholder="Write your prompt here..."></textarea>
-      <button type="submit">Generate Answer</button>
+      <button id="generateBtn" type="submit">Generate Answer</button>
     </form>
-
-    <div id="resultBox">__RESULT__</div>
   </div>
 
   <script>
@@ -83,7 +88,7 @@
         });
 
         const data = await response.json();
-
+        document.getElementById('prompt').value = ''; // Clear the textarea after submission
         if (!response.ok) {
           throw new Error(data.error || 'Unable to generate a response.');
         }
@@ -95,4 +100,5 @@
     });
   </script>
 </body>
+
 </html>
